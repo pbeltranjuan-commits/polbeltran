@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pol Beltran | Arquitecto de Soluciones IA</title>
+    <title>Pol Beltran | AI Solutions Architect</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-                    colors: {
-                        primary: '#4f46e5', secondary: '#0ea5e9',
-                        bg: '#f8fafc', card: '#ffffff', text: '#0f172a', muted: '#475569'
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Syne', 'sans-serif'] },
+                    colors: { primary: '#4f46e5', secondary: '#0ea5e9', bg: '#f8fafc', card: '#ffffff', text: '#0f172a', muted: '#475569' }
                 }
             }
         }
@@ -25,121 +22,189 @@
         .nav-link { color: #475569; transition: color 0.3s; }
         .nav-link:hover, .nav-link.active { color: #4f46e5; }
         .card { background: white; border: 1px solid #e2e8f0; border-radius: 1rem; transition: all 0.3s ease; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(79, 70, 229, 0.1); }
-        input, textarea { background: #f1f5f9; border: 1px solid #e2e8f0; }
-        input:focus, textarea:focus { outline: none; border-color: #4f46e5; background: white; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(79,70,229,0.08); }
+        input, textarea { background: #f1f5f9; border: 1px solid #e2e8f0; transition: all 0.2s; }
+        input:focus, textarea:focus { outline: none; border-color: #4f46e5; background: white; box-shadow: 0 0 0 3px rgba(79,70,229,0.1); }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Nav -->
-    <nav class="fixed w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             <a href="#inicio" class="text-xl font-bold gradient-text">PB</a>
             <div class="hidden md:flex space-x-6 text-sm font-medium">
                 <a href="#inicio" class="nav-link">Inicio</a>
-                <a href="#livegate" class="nav-link">Livegate</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#stack" class="nav-link">Tech Stack</a>
                 <a href="#experiencia" class="nav-link">Experiencia</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
             </div>
             <div class="flex space-x-1 bg-slate-100 p-1 rounded-lg">
-                <button onclick="setLang('ca')" class="px-3 py-1 text-xs font-bold rounded bg-white shadow-sm text-primary">CA</button>
-                <button onclick="setLang('es')" class="px-3 py-1 text-xs font-medium rounded text-muted hover:text-primary">ES</button>
-                <button onclick="setLang('en')" class="px-3 py-1 text-xs font-medium rounded text-muted hover:text-primary">EN</button>
+                <button onclick="setLang('ca')" class="lang-btn px-3 py-1 text-xs font-medium rounded text-muted hover:text-primary transition-all">CA</button>
+                <button onclick="setLang('es')" class="lang-btn px-3 py-1 text-xs font-bold rounded bg-white shadow-sm text-primary transition-all">ES</button>
+                <button onclick="setLang('en')" class="lang-btn px-3 py-1 text-xs font-medium rounded text-muted hover:text-primary transition-all">EN</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section id="inicio" class="pt-32 pb-20 px-4 text-center">
-        <div class="max-w-3xl mx-auto">
-            <span class="inline-block px-4 py-1.5 mb-6 bg-primary/10 text-primary rounded-full text-sm font-semibold">Disponible para nuevos proyectos</span>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Pol Beltran Juan</h1>
-            <p class="text-xl text-muted mb-10 leading-relaxed" data-i18n="hero_desc">
-                Consultor sénior en Treasury y Arquitecto de Soluciones IA. Combino 5+ años de experiencia en grandes entidades aseguradoras con ingeniería de software moderna para crear infraestructuras inteligentes y rentables.
+    <section id="inicio" class="pt-32 pb-20 px-4 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10"></div>
+        <div class="max-w-4xl mx-auto">
+            <span class="inline-block px-4 py-1.5 mb-6 bg-primary/10 text-primary rounded-full text-sm font-semibold border border-primary/20">Disponible para proyectos</span>
+            <h1 class="font-display text-5xl md:text-7xl font-extrabold mb-6 tracking-tighter text-slate-900 leading-[0.95]">
+                Pol Beltran <span class="gradient-text">Juan</span>
+            </h1>
+            <p class="text-xl text-muted mb-10 max-w-2xl mx-auto leading-relaxed" data-i18n="hero_desc">
+                Consultor sénior en Treasury y Arquitecto de Soluciones IA. Combino 5+ años en grandes aseguradoras con ingeniería de software moderna para crear infraestructuras inteligentes, seguras y rentables.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <!-- Botón Livegate corregido -->
-                <a href="https://livegate.es" target="_blank" class="px-8 py-3.5 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all">
-                    Ver Livegate
-                </a>
-                <!-- Botón Servicios corregido -->
-                <a href="#contacto" class="px-8 py-3.5 bg-white text-primary font-medium rounded-xl border border-slate-200 hover:border-primary hover:bg-slate-50 transition-all shadow-sm">
-                    Servicios Implementación IA
-                </a>
+                <a href="https://livegate.es" target="_blank" class="px-8 py-4 bg-primary text-white font-semibold rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-1 transition-all">Ver Livegate</a>
+                <a href="#contacto" class="px-8 py-4 bg-white text-primary font-semibold rounded-xl border-2 border-slate-200 hover:border-primary hover:bg-slate-50 transition-all">Servicios Implementación IA</a>
             </div>
         </div>
     </section>
 
-    <!-- Livegate Section (Sin precios) -->
-    <section id="livegate" class="py-20 px-4 bg-white">
+    <section id="proyectos" class="py-24 px-4 bg-slate-50">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <span class="text-secondary font-semibold tracking-wide uppercase text-sm">Proyecto Destacado</span>
-                <h2 class="text-4xl font-bold mt-2 mb-4">Livegate</h2>
-                <p class="text-muted max-w-2xl mx-auto" data-i18n="livegate_desc">L'Escut i el Cervell de la teva Intel·ligència Artificial. Middleware de alta ingeniería para gobernanza, privacidad y optimización de LLMs.</p>
+                <span class="text-secondary font-semibold tracking-wide uppercase text-sm">Portfolio</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4 font-display" data-i18n="projects_title">Proyectos Destacados</h2>
+                <p class="text-muted max-w-2xl mx-auto" data-i18n="projects_desc">Soluciones que resuelven problemas reales de escalabilidad, seguridad y optimización en IA empresarial.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                <div class="card p-6">
-                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 text-primary">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <article class="card p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold font-display text-slate-900">Livegate</h3>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold uppercase rounded-full">AI Middleware</span>
+                        </div>
+                        <p class="text-slate-500 italic mb-6 font-medium text-sm" data-i18n="livegate_quote">"L'Escut i el Cervell de la teva Intel·ligència Artificial"</p>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex gap-3">
+                                <div class="mt-1.5"><div class="w-2 h-2 rounded-full bg-indigo-500"></div></div>
+                                <div><h4 class="font-bold text-sm text-slate-800" data-i18n="feat_1_t">FinOps y Enrutamiento</h4><p class="text-xs text-slate-500" data-i18n="feat_1_d">Filtro dinámico de presupuestos y selección algorítmica de la API más eficiente.</p></div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="mt-1.5"><div class="w-2 h-2 rounded-full bg-indigo-500"></div></div>
+                                <div><h4 class="font-bold text-sm text-slate-800" data-i18n="feat_2_t">Caché Semántica</h4><p class="text-xs text-slate-500" data-i18n="feat_2_d">Reducción inmediata de consumo reutilizando historial conceptual. 99% eficiencia.</p></div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="mt-1.5"><div class="w-2 h-2 rounded-full bg-indigo-500"></div></div>
+                                <div><h4 class="font-bold text-sm text-slate-800" data-i18n="feat_3_t">DLP y Privacidad</h4><p class="text-xs text-slate-500" data-i18n="feat_3_d">Ofuscación automática de patentes, DNI o datos sensibles antes de salir de la infraestructura.</p></div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="mt-1.5"><div class="w-2 h-2 rounded-full bg-indigo-500"></div></div>
+                                <div><h4 class="font-bold text-sm text-slate-800" data-i18n="feat_4_t">RAG y Optimización</h4><p class="text-xs text-slate-500" data-i18n="feat_4_d">Memoria privada integrada y reescritura inteligente de prompts para cero alucinaciones.</p></div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                            <h4 class="text-sm font-bold text-indigo-600 mb-1" data-i18n="livegate_impact">Impacto Demostrado</h4>
+                            <p class="text-xs text-slate-600" data-i18n="livegate_impact_desc">Reducción del 40-60% en costos de API gracias a la caché semántica. Cero fugas de datos sensibles en entornos GDPR.</p>
+                        </div>
                     </div>
-                    <h3 class="font-bold text-lg mb-2" data-i18n="feat_1_t">FinOps y Enrutamiento</h3>
-                    <p class="text-sm text-muted" data-i18n="feat_1_d">Filtro dinámico de presupuestos y selección algorítmica de la API más eficiente.</p>
+                </article>
+
+                <article class="card p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-sky-200/40 to-blue-200/40 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold font-display text-slate-900">NextForge</h3>
+                            <span class="px-3 py-1 bg-sky-100 text-sky-700 text-xs font-bold uppercase rounded-full">BYOK Prompt Studio</span>
+                        </div>
+                        <p class="text-slate-500 italic mb-6 font-medium text-sm" data-i18n="nextforge_quote">"Panel de control BYOK para gestión total de prompts empresariales"</p>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex gap-3">
+                                <div class="mt-1.5"><div class="w-2 h-2 rounded-full bg-sky-500"></div></div>
+                                <div><h4 class="font-bold text-sm text-slate-800" data-i18n="next_1_t">Bring Your Own Key (BYOK)</h4><p class="text-xs text-slate-500" data-i18n="next_1_d">El cliente aporta su API Key. Sus datos nunca tocan servidores de terceros. Privacidad absoluta.</p></div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="mt-1.5"><div class="w-2 h-2 rounded-full bg-sky-500"></div></div>
+                                <div><h4 class="font-bold text-sm text-slate-800" data-i18n="next_2_t">Edición en Tiempo Real</h4><p class="text-xs text-slate-500" data-i18n="next_2_d">Modifica, versiona y testea prompts al instante. Interfaz intuitiva sin necesidad de código.</p></div>
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="mt-1.5"><div class="w-2 h-2 rounded-full bg-sky-500"></div></div>
+                                <div><h4 class="font-bold text-sm text-slate-800" data-i18n="next_3_t">Multi-API & Multi-Modelo</h4><p class="text-xs text-slate-500" data-i18n="next_3_d">Compatible con OpenAI, Anthropic, Mistral y más. Cambia de modelo sin tocar tu aplicación.</p></div>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 rounded-xl p-4 border border-slate-100 flex items-center gap-3">
+                            <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            <span class="text-xs font-bold text-slate-700" data-i18n="next_cta">Control total de tus prompts sin complejidad técnica.</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-24 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-secondary font-semibold tracking-wide uppercase text-sm">Soluciones</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 mb-4 font-display" data-i18n="services_title">Servicios Especializados</h2>
+                <p class="text-muted max-w-2xl mx-auto">Ofertas concretas diseñadas para resolver problemas específicos de IA en entornos regulados.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card p-8 text-center">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 text-primary">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2" data-i18n="srv1_t">Auditoría de Costos LLM</h3>
+                    <p class="text-sm text-muted" data-i18n="srv1_d">Análisis exhaustivo de flujos, cuellos de botella e implementación de router FinOps.</p>
                 </div>
-                <div class="card p-6">
-                    <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4 text-secondary">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <div class="card p-8 text-center">
+                    <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4 text-red-500">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                     </div>
-                    <h3 class="font-bold text-lg mb-2" data-i18n="feat_2_t">Caché Semántica</h3>
-                    <p class="text-sm text-muted" data-i18n="feat_2_d">Reducción inmediata de consumo reutilizando historial conceptual. 99% eficiencia.</p>
+                    <h3 class="text-lg font-bold mb-2" data-i18n="srv2_t">Módulo DLP para IA</h3>
+                    <p class="text-sm text-muted" data-i18n="srv2_d">Protección de datos sensibles en pipelines de IA. Cumplimiento GDPR sin fricción.</p>
                 </div>
-                <div class="card p-6">
-                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4 text-red-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <div class="card p-8 text-center">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4 text-green-500">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
                     </div>
-                    <h3 class="font-bold text-lg mb-2" data-i18n="feat_3_t">DLP y Privacidad</h3>
-                    <p class="text-sm text-muted" data-i18n="feat_3_d">Ofuscación automática de patentes, DNI o datos sensibles antes de salir de la infraestructura.</p>
-                </div>
-                <div class="card p-6">
-                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4 text-blue-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2" data-i18n="feat_4_t">RAG y Optimización</h3>
-                    <p class="text-sm text-muted" data-i18n="feat_4_d">Memoria privada integrada y reescritura inteligente de prompts para cero alucinaciones.</p>
+                    <h3 class="text-lg font-bold mb-2" data-i18n="srv3_t">Agentes de IA Autónomos</h3>
+                    <p class="text-sm text-muted" data-i18n="srv3_d">Desarrollo de agentes que ejecutan tareas complejas de back-office y atención al cliente.</p>
                 </div>
             </div>
-            
-            <!-- Arquitectura (Sin modelo de precios) -->
-            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4" data-i18n="arch_t">Arquitectura Desacoplada</h3>
-                        <p class="text-muted mb-6" data-i18n="arch_d">Backend ultra-rápido en Render Linux, comunicándose asíncronamente con una interfaz visual de alta fidelidad en Bubble. Latencia cero con seguridad perimetral activa.</p>
+        </div>
+    </section>
+
+    <section id="stack" class="py-20 px-4 bg-slate-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-8 font-display">Tech Stack & Herramientas</h3>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200">
+                <div class="mb-6 text-left">
+                    <h4 class="font-semibold text-sm uppercase tracking-wide text-muted mb-3">Backend & IA</h4>
+                    <div class="flex flex-wrap gap-2 justify-start">
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-medium">Python</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-medium">Node.js</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-medium">FastAPI</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-medium">LangChain</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-medium">LlamaIndex</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-medium">Vector DBs</span>
                     </div>
-                    <div class="grid grid-cols-1 gap-4">
-                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-3">
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            <span class="font-medium text-sm">Backend Render (Linux Optimizado)</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center gap-3">
-                            <div class="w-3 h-3 rounded-full bg-blue-500"></div>
-                            <span class="font-medium text-sm">Interfaz Control (Bubble)</span>
-                        </div>
+                </div>
+                <div class="text-left">
+                    <h4 class="font-semibold text-sm uppercase tracking-wide text-muted mb-3">Infra & DevOps</h4>
+                    <div class="flex flex-wrap gap-2 justify-start">
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-medium">Docker</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-medium">Render</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-medium">AWS</span>
+                        <span class="px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-medium">CI/CD</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experiencia -->
-    <section id="experiencia" class="py-20 px-4 bg-slate-50">
+    <section id="experiencia" class="py-24 px-4 bg-white">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center" data-i18n="exp_title">Experiencia Profesional</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center font-display" data-i18n="exp_title">Experiencia Profesional</h2>
             <div class="space-y-6">
-                <!-- NTT DATA -->
-                <div class="card p-6">
+                <div class="card p-6 border-l-4 border-l-primary">
                     <div class="flex flex-col md:flex-row md:justify-between mb-2">
                         <h3 class="text-xl font-bold">Consultor Empresarial | NTT DATA</h3>
                         <span class="text-primary font-medium text-sm">Oct 2020 – Actualidad</span>
@@ -151,24 +216,21 @@
                         <li>Participación en gestión DLP y prevención de fugas de datos.</li>
                     </ul>
                 </div>
-                <!-- Mediolanum -->
-                <div class="card p-6">
+                <div class="card p-6 border-l-4 border-l-secondary">
                     <div class="flex flex-col md:flex-row md:justify-between mb-2">
                         <h3 class="text-xl font-bold">Planificador Financiero | Banco Mediolanum</h3>
                         <span class="text-primary font-medium text-sm">Sep 2020 – Nov 2020</span>
                     </div>
                     <p class="text-sm text-muted" data-i18n="med_desc">Planificación estratégica, seguimiento de carteras y análisis técnico de fondos.</p>
                 </div>
-                <!-- Audinform -->
-                <div class="card p-6">
+                <div class="card p-6 border-l-4 border-l-slate-300">
                     <div class="flex flex-col md:flex-row md:justify-between mb-2">
                         <h3 class="text-xl font-bold">Auditor de Cuentas | Audinform</h3>
                         <span class="text-primary font-medium text-sm">Oct 2019 – Jun 2020</span>
                     </div>
                     <p class="text-sm text-muted" data-i18n="aud_desc">Ejecución de auditorías mediante pruebas sustantivas y analíticas. Informes de control interno.</p>
                 </div>
-                <!-- Finanzarel -->
-                <div class="card p-6">
+                <div class="card p-6 border-l-4 border-l-slate-300">
                     <div class="flex flex-col md:flex-row md:justify-between mb-2">
                         <h3 class="text-xl font-bold">Analista de Riesgos | Finanzarel</h3>
                         <span class="text-primary font-medium text-sm">Jun 2019 – Oct 2019</span>
@@ -179,34 +241,40 @@
         </div>
     </section>
 
-    <!-- Formación -->
-    <section class="py-20 px-4 bg-white">
+    <section class="py-20 px-4 bg-slate-50">
         <div class="max-w-3xl mx-auto">
-            <h3 class="text-2xl font-bold mb-8 text-center" data-i18n="edu_title">Formación Académica</h3>
-            <div class="space-y-4">
-                <div class="border-l-4 border-primary pl-4">
-                    <h4 class="font-bold">Máster en Banca y Finanzas</h4>
-                    <p class="text-sm text-muted">UPF Barcelona School of Management (2019 – 2020)</p>
+            <h3 class="text-2xl font-bold mb-8 text-center font-display" data-i18n="edu_title">Formación Académica</h3>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-2 h-2 mt-2.5 rounded-full bg-primary shrink-0"></div>
+                    <div>
+                        <h4 class="font-bold text-lg">Máster en Banca y Finanzas</h4>
+                        <p class="text-sm text-muted">UPF Barcelona School of Management (2019 – 2020)</p>
+                    </div>
                 </div>
-                <div class="border-l-4 border-secondary pl-4">
-                    <h4 class="font-bold">Grado en ADE</h4>
-                    <p class="text-sm text-muted">Universidad de Barcelona (2013 – 2018)</p>
+                <div class="flex items-start gap-4">
+                    <div class="w-2 h-2 mt-2.5 rounded-full bg-secondary shrink-0"></div>
+                    <div>
+                        <h4 class="font-bold text-lg">Grado en Administración y Dirección de Empresas</h4>
+                        <p class="text-sm text-muted">Universidad de Barcelona (2013 – 2018)</p>
+                    </div>
                 </div>
-                <div class="border-l-4 border-slate-300 pl-4">
-                    <h4 class="font-bold">Certificaciones</h4>
-                    <p class="text-sm text-muted">Basic Course Life Insurance (Everis) | Grupo B (CECAS)</p>
+                <div class="flex items-start gap-4">
+                    <div class="w-2 h-2 mt-2.5 rounded-full bg-slate-400 shrink-0"></div>
+                    <div>
+                        <h4 class="font-bold text-lg">Certificaciones Profesionales</h4>
+                        <p class="text-sm text-muted">Basic Course Life Insurance (Everis) | Grupo B (CECAS)</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="py-20 px-4 bg-slate-50">
+    <section id="contacto" class="py-24 px-4 bg-white">
         <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4" data-i18n="contact_title">¿Hablamos?</h2>
-            <p class="text-muted mb-10">Estoy buscando oportunidades como Arquitecto de IA o colaboraciones con inversores.</p>
-            
-            <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 text-left">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display" data-i18n="contact_title">¿Hablamos?</h2>
+            <p class="text-muted mb-12">Arquitecto de IA & Consultor Treasury. Busco colaboraciones con empresas que necesiten soluciones seguras y rentables.</p>
+            <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 text-left shadow-sm">
                 <div class="grid md:grid-cols-2 gap-8 mb-8">
                     <div>
                         <label class="block text-sm font-medium text-muted mb-1">Email</label>
@@ -217,11 +285,11 @@
                         <a href="tel:+34659737409" class="text-lg font-bold text-primary hover:underline">+34 659 737 409</a>
                     </div>
                 </div>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Nombre" class="w-full px-4 py-3 rounded-xl text-sm">
-                    <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-xl text-sm">
-                    <textarea rows="4" placeholder="Mensaje" class="w-full px-4 py-3 rounded-xl text-sm"></textarea>
-                    <button class="w-full py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all">Enviar Mensaje</button>
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('Mensaje enviado (simulado)');">
+                    <input type="text" placeholder="Nombre" class="w-full px-4 py-3 rounded-xl text-sm font-medium" required>
+                    <input type="email" placeholder="Email" class="w-full px-4 py-3 rounded-xl text-sm font-medium" required>
+                    <textarea rows="4" placeholder="Mensaje" class="w-full px-4 py-3 rounded-xl text-sm font-medium resize-none" required></textarea>
+                    <button class="w-full py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all shadow-md shadow-primary/20">Enviar Mensaje</button>
                 </form>
             </div>
         </div>
@@ -235,59 +303,84 @@
         const translations = {
             ca: {
                 hero_desc: "Consultor sènior en Treasury i Arquitecte de Solucions IA. Combino 5+ anys d'experiència en grans entitats asseguradores amb enginyeria de software moderna per crear infraestructures intel·ligents i rendibles.",
-                livegate_desc: "L'Escut i el Cervell de la teva Intel·ligència Artificial. Middleware d'alta enginyeria per a governança, privadesa i optimització de LLMs.",
+                projects_title: "Projectes Destacats", projects_desc: "Solucions tecnològiques que resolen problemes reals d'escalabilitat, seguretat i optimització en IA empresarial.",
+                livegate_quote: "\"L'Escut i el Cervell de la teva Intel·ligència Artificial\"",
+                livegate_impact: "Impacte Demonstrat", livegate_impact_desc: "Reducció del 40-60% en costos d'API gràcies a la caché semàntica. Zero fuites de dades sensibles en entorns GDPR.",
                 feat_1_t: "FinOps i Enrutament", feat_1_d: "Filtre dinàmic de pressupostos i selecció algorítmica de l'API més eficient.",
                 feat_2_t: "Cache Semàntica", feat_2_d: "Reducció immediata de consum reutilitzant historial conceptual. 99% eficiència.",
                 feat_3_t: "DLP i Privadesa", feat_3_d: "Ofuscació automàtica de patents, DNI o dades sensibles abans de sortir de la infraestructura.",
                 feat_4_t: "RAG i Optimització", feat_4_d: "Memòria privada integrada i reescriptura intel·ligent de prompts per zero al·lucinacions.",
-                arch_t: "Arquitectura Desacobla", arch_d: "Backend ultra-ràpid a Render Linux, comunicant-se asíncronament amb una interfície visual d'alta fidelitat a Bubble. Latència zero amb seguretat perimetral activa.",
+                nextforge_quote: "\"Panell de control BYOK per a gestió total de prompts empresarials\"",
+                next_1_t: "Bring Your Own Key (BYOK)", next_1_d: "El client aporta la seva API Key. Les seves dades mai toquen servidors de tercers. Privacitat absoluta.",
+                next_2_t: "Edició en Temps Real", next_2_d: "Modifica, versiona i testea prompts a l'instant. Interfície intuïtiva sense necessitat de codi.",
+                next_3_t: "Multi-API i Multi-Model", next_3_d: "Compatible amb OpenAI, Anthropic, Mistral i més. Canvia de model sense tocar la teva aplicació.",
+                next_cta: "Control total dels teus prompts sense complexitat tècnica.",
+                services_title: "Serveis Especialitzats", services_desc: "Ofertes concretes dissenyades per resoldre problemes específics d'IA en entorns regulats.",
+                srv1_t: "Auditoria de Costos LLM", srv1_d: "Anàlisi exhaustiu de fluxos, colls d'ampolla i implementació de router FinOps.",
+                srv2_t: "Mòdul DLP per a IA", srv2_d: "Protecció de dades sensibles en pipelines d'IA. Compliment GDPR sense fricció.",
+                srv3_t: "Agentes de IA Autónomos", srv3_d: "Desenvolupament d'agents que executen tasques complexes de back-office i atenció al client.",
                 exp_title: "Experiència Professional",
                 ntt_desc: ["Responsable funcional de la migració Cash Recon → SimCorp.", "Gestió de conciliacions bancàries i Data Management d'actius.", "Participació en gestió DLP i prevenció de fugues de dades."],
                 med_desc: "Planificació estratègica, seguiment de carteres i anàlisi tècnic de fons.",
                 aud_desc: "Execució d'auditories mitjançant proves substantives i analítiques. Informes de control intern.",
                 fin_desc: "Anàlisi financer i valoració d'empreses per concessió de crèdit.",
-                edu_title: "Formació Acadèmica",
-                contact_title: "Parlem?"
+                edu_title: "Formació Acadèmica", contact_title: "Parlem?"
             },
             es: {
-                hero_desc: "Consultor sénior en Treasury y Arquitecto de Soluciones IA. Combino 5+ años de experiencia en grandes entidades aseguradoras con ingeniería de software moderna para crear infraestructuras inteligentes y rentables.",
-                livegate_desc: "L'Escut i el Cervell de la teva Intel·ligència Artificial. Middleware de alta ingeniería para gobernanza, privacidad y optimización de LLMs.",
+                hero_desc: "Consultor sénior en Treasury y Arquitecto de Soluciones IA. Combino 5+ años en grandes aseguradoras con ingeniería de software moderna para crear infraestructuras inteligentes, seguras y rentables.",
+                projects_title: "Proyectos Destacados", projects_desc: "Soluciones que resuelven problemas reales de escalabilidad, seguridad y optimización en IA empresarial.",
+                livegate_quote: "\"L'Escut i el Cervell de la teva Intel·ligència Artificial\"",
+                livegate_impact: "Impacto Demostrado", livegate_impact_desc: "Reducción del 40-60% en costos de API gracias a la caché semántica. Cero fugas de datos sensibles en entornos GDPR.",
                 feat_1_t: "FinOps y Enrutamiento", feat_1_d: "Filtro dinámico de presupuestos y selección algorítmica de la API más eficiente.",
                 feat_2_t: "Caché Semántica", feat_2_d: "Reducción inmediata de consumo reutilizando historial conceptual. 99% eficiencia.",
                 feat_3_t: "DLP y Privacidad", feat_3_d: "Ofuscación automática de patentes, DNI o datos sensibles antes de salir de la infraestructura.",
                 feat_4_t: "RAG y Optimización", feat_4_d: "Memoria privada integrada y reescritura inteligente de prompts para cero alucinaciones.",
-                arch_t: "Arquitectura Desacoplada", arch_d: "Backend ultra-rápido en Render Linux, comunicándose asíncronamente con una interfaz visual de alta fidelidad en Bubble. Latencia cero con seguridad perimetral activa.",
+                nextforge_quote: "\"Panel de control BYOK para gestión total de prompts empresariales\"",
+                next_1_t: "Bring Your Own Key (BYOK)", next_1_d: "El cliente aporta su API Key. Sus datos nunca tocan servidores de terceros. Privacidad absoluta.",
+                next_2_t: "Edición en Tiempo Real", next_2_d: "Modifica, versiona y testea prompts al instante. Interfaz intuitiva sin necesidad de código.",
+                next_3_t: "Multi-API y Multi-Modelo", next_3_d: "Compatible con OpenAI, Anthropic, Mistral y más. Cambia de modelo sin tocar tu aplicación.",
+                next_cta: "Control total de tus prompts sin complejidad técnica.",
+                services_title: "Servicios Especializados", services_desc: "Ofertas concretas diseñadas para resolver problemas específicos de IA en entornos regulados.",
+                srv1_t: "Auditoría de Costos LLM", srv1_d: "Análisis exhaustivo de flujos, cuellos de botella e implementación de router FinOps.",
+                srv2_t: "Módulo DLP para IA", srv2_d: "Protección de datos sensibles en pipelines de IA. Cumplimiento GDPR sin fricción.",
+                srv3_t: "Agentes de IA Autónomos", srv3_d: "Desarrollo de agentes que ejecutan tareas complejas de back-office y atención al cliente.",
                 exp_title: "Experiencia Profesional",
                 ntt_desc: ["Responsable funcional de la migración Cash Recon → SimCorp.", "Gestión de conciliaciones bancarias y Data Management de activos.", "Participación en gestión DLP y prevención de fugas de datos."],
                 med_desc: "Planificación estratégica, seguimiento de carteras y análisis técnico de fondos.",
                 aud_desc: "Ejecución de auditorías mediante pruebas sustantivas y analíticas. Informes de control interno.",
                 fin_desc: "Análisis financiero y valoración de empresas para concesión de crédito.",
-                edu_title: "Formación Académica",
-                contact_title: "¿Hablamos?"
+                edu_title: "Formación Académica", contact_title: "¿Hablamos?"
             },
             en: {
-                hero_desc: "Senior Treasury Consultant & AI Solutions Architect. Combining 5+ years of experience in major insurance entities with modern software engineering to build intelligent, profitable infrastructures.",
-                livegate_desc: "The Shield & Brain of your AI. High-engineering middleware for governance, privacy, and LLM optimization.",
+                hero_desc: "Senior Treasury Consultant & AI Solutions Architect. Combining 5+ years in major insurance companies with modern software engineering to build intelligent, secure infrastructures.",
+                projects_title: "Featured Projects", projects_desc: "Solutions that solve real scalability, security, and optimization challenges in enterprise AI.",
+                livegate_quote: "\"The Shield & Brain of your Artificial Intelligence\"",
+                livegate_impact: "Proven Impact", livegate_impact_desc: "40-60% reduction in API costs thanks to semantic cache. Zero sensitive data leaks in GDPR environments.",
                 feat_1_t: "FinOps & Routing", feat_1_d: "Dynamic budget filtering and algorithmic selection of the most efficient API.",
                 feat_2_t: "Semantic Cache", feat_2_d: "Immediate consumption reduction reusing conceptual history. 99% efficiency.",
                 feat_3_t: "DLP & Privacy", feat_3_d: "Automatic obfuscation of patents, IDs, or sensitive data before leaving the infrastructure.",
                 feat_4_t: "RAG & Optimization", feat_4_d: "Integrated private memory and intelligent prompt rewriting for zero hallucinations.",
-                arch_t: "Decoupled Architecture", arch_d: "Ultra-fast backend on Render Linux, communicating asynchronously with a high-fidelity visual interface on Bubble. Zero latency with active perimeter security.",
+                nextforge_quote: "\"BYOK control panel for total enterprise prompt management\"",
+                next_1_t: "Bring Your Own Key (BYOK)", next_1_d: "Client provides their API Key. Their data never touches third-party servers. Absolute privacy.",
+                next_2_t: "Real-time Editing", next_2_d: "Modify, version, and test prompts instantly. Intuitive interface without coding needs.",
+                next_3_t: "Multi-API & Multi-Model", next_3_d: "Compatible with OpenAI, Anthropic, Mistral, and more. Switch models without touching your app.",
+                next_cta: "Total control of your prompts without technical complexity.",
+                services_title: "Specialized Services", services_desc: "Concrete offers designed to solve specific AI challenges in regulated environments.",
+                srv1_t: "LLM Cost Audit", srv1_d: "Exhaustive workflow analysis, bottleneck identification, and FinOps router implementation.",
+                srv2_t: "DLP Module for AI", srv2_d: "Sensitive data protection in AI pipelines. GDPR compliance without friction.",
+                srv3_t: "Autonomous AI Agents", srv3_d: "Development of agents that execute complex back-office and customer service tasks.",
                 exp_title: "Professional Experience",
-                ntt_desc: ["Functional lead for Cash Recon → SimCorp migration.", "Management of bank reconciliations and asset Data Management.", "Participation in DLP management and data leak prevention."],
-                med_desc: "Strategic planning, portfolio tracking and technical analysis of funds.",
-                aud_desc: "Execution of audits through substantive and analytical tests. Internal control reports.",
+                ntt_desc: ["Functional lead for Cash Recon → SimCorp migration.", "Bank reconciliation and asset Data Management.", "DLP management and data leak prevention participation."],
+                med_desc: "Strategic planning, portfolio tracking and technical fund analysis.",
+                aud_desc: "Audit execution through substantive and analytical tests. Internal control reports.",
                 fin_desc: "Financial analysis and company valuation for credit granting.",
-                edu_title: "Education",
-                contact_title: "Let's Talk?"
+                edu_title: "Education", contact_title: "Let's Talk?"
             }
         };
 
         function setLang(lang) {
             const t = translations[lang];
             if(!t) return;
-            
-            // Update text content
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if(t[key]) {
@@ -298,16 +391,13 @@
                     }
                 }
             });
-
-            // Update buttons style
-            document.querySelectorAll('.bg-slate-100 button').forEach(btn => {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
                 if(btn.textContent.toLowerCase() === lang) {
-                    btn.className = "px-3 py-1 text-xs font-bold rounded bg-white shadow-sm text-primary";
+                    btn.className = "lang-btn px-3 py-1 text-xs font-bold rounded bg-white shadow-sm text-primary transition-all";
                 } else {
-                    btn.className = "px-3 py-1 text-xs font-medium rounded text-muted hover:text-primary";
+                    btn.className = "lang-btn px-3 py-1 text-xs font-medium rounded text-muted hover:text-primary transition-all";
                 }
             });
-            
             document.documentElement.lang = lang;
         }
     </script>
